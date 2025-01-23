@@ -52,7 +52,13 @@
         <link rel="canonical" href="https://wwwarielag.com.mx"> <!--ENLACE OPCIONAL-->
         <link rel="stylesheet" href="config/sass/estilos.css">
         <link rel="stylesheet" href="config/sass/normalize.css">  
+        <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
         <!-- <base href="https://www.mariodev.com/"> -->
         <title>Ariel Agonizante - Servicios de fotografía</title>
     </head>
@@ -68,7 +74,7 @@
                 <nav class="menu">
                     <ul class="menu__list">
                         <li class="menu__list-item">
-                            <a href="#home"><i class="fa-solid fa-door-open"></i>Inicio</a>
+                            <a href="#home"><i class="fa-solid fa-house"></i>Inicio</a>
                         </li>
                         <li class="menu__list-item">
                             <a href="#aboutUs"><i class="fa-regular fa-address-card"></i>Conoceme</a>
@@ -92,24 +98,147 @@
         </div>
     </header>
     <main>
-        <section class="banner">
+        <section class="banner" id="home">
             <div class="contenedor">
                 <div class="banner__section">
                     <div class="banner__section-img">
-                        <img src="" alt="Ariel Agonizante - Fotografo profesional">
-                        <div class="banner__line"></div>
-                        <div class="banner__line"></div>
+                        <img src="config/img/funciones-fotografo.jpg.webp" alt="Ariel Agonizante - Fotografo profesional">
+                    </div>
+                    <div class="banner__line">
+                    </div>
+                    <div class="banner__line">
+                    </div>
+                    <div class="banner__line">
+                    </div>
+                    <div class="banner__line">
+                    </div>
+                    <div class="banner__line">
+                    </div>
+                    <div class="banner__line">
                     </div>
                    <div class="banner__section-txt">
-                    <h1 class="max-titulo">¡Hola! Mi nombre Jakín</h1>
+                    <h1 class="max-titulo">¡Hola! Mi nombre Ariel</h1>
                     <h2 class="titulo">Y me apasiona la fotografía</h2>
                    </div>
                 </div>
             </div>
         </section>
+
+        <section class="aboutUs" id="aboutUs">
+            <div class="contenedor">
+                <h2 class="titulo">Conoceme un poco más</h2>
+                <article class="aboutUs__info">
+                    <div class="aboutUs__img">
+                        <img src="config/img/pexels-oktay-koseoglu-42034955-30290155.jpg" loading="lazy" alt="Ariel Agonizante - Fotografo especializado">
+                    </div>
+                    <div class="aboutUs__txt">
+                        <h3 class="sub-titulo">Lo que me motiva</h3>
+                        <p class="texto">¡Hola! Soy [Nombre del Fotógrafo], un apasionado de la fotografía que ve la cámara no solo como una herramienta, <strong>sino como una extensión de mi visión, mi creatividad y mi forma de conectar con el mundo</strong>. Mi objetivo es capturar momentos únicos que cuenten una historia, transmitan emociones y queden inmortalizados para siempre.</p>
+                        <h3 class="sub-titulo">¿Quién soy?</h3>
+                        <p class="texto">Desde joven, la fotografía ha sido mi pasión. Comencé a explorarla como un hobby, pero rápidamente me di cuenta de que tenía el poder de transformar momentos fugaces en recuerdos eternos. <strong>Estudié [nombre de la institución o tipo de formación],</strong> y desde entonces he trabajado con una variedad de clientes en diferentes áreas, siempre buscando la perfección en cada toma.</p>
+                    </div>
+                </article>
+                <article class="aboutUs__info">
+                    <div class="aboutUs__img">
+                        <img src="config/img/pexels-willy-mendez-1669648805-30286132.jpg" loading="lazy" alt="Ariel Agonizante - Fotografo especializado">
+                    </div>
+                   <div class="aboutUs__txt">
+                    <h3 class="sub-titulo">¿Qué me motiva a ser fotógrafo?
+                    </h3>
+                    <p class="texto">Lo que más me motiva como fotógrafo es la posibilidad de capturar la esencia de las personas y los momentos. Cada sesión es una oportunidad para observar, entender y traducir lo que sucede a través de mi lente. Para mí, la fotografía no solo es técnica: es arte, es sentir, es una forma de contar historias sin palabras. Ya sea en un retrato, en un evento especial o en la belleza de un paisaje, mi misión es hacer que cada imagen hable por sí misma.
+                    </p>
+                    <a href="#contact">Contactame</a>
+                   </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="gallery" id="portfolio">
+          <div class="contenedor">
+            <h2 class="titulo">mi galería</h2>
+            <p class="texto">Mi enfoque va más allá de simplemente tomar fotos; busco crear una experiencia memorable para mis clientes. Trabajo de manera cercana para entender tus expectativas, para que las imágenes resultantes no solo te sorprendan, sino que te emocionen. Mi estilo <strong>es versátil, adaptándome a las necesidades y preferencias de cada cliente,</strong> pero siempre con un enfoque en la autenticidad, la calidad y la emoción.</p>
+           <div class="swiper">
+            <div class="gallery__slider">
+                <div class="gallery__container swiper-wrapper">
+                    <div class="gallery__item swiper-slide">
+                        <img src="config/img/1.jpg" class="img__gallery" loading="lazy" alt="">
+                    </div>
+                    <div class="gallery__item swiper-slide">
+                        <img src="config/img/2.jpg" loading="lazy" class="img__gallery"  alt="">
+                    </div>
+                    <div class="gallery__item swiper-slide">
+                        <img src="config/img/3.jpg" loading="lazy" class="img__gallery" alt="">
+                    </div>
+                    <div class="gallery__item swiper-slide">
+                        <img src="config/img/4.jpg" loading="lazy"class="img__gallery" alt="">
+                    </div>
+                    <div class="gallery__item swiper-slide">
+                        <img src="config/img/5.jpg" loading="lazy" class="img__gallery" alt="">
+                    </div>
+                    <div class="gallery__item swiper-slide">
+                        <img src="config/img/6.jpg" loading="lazy" class="img__gallery" alt="">
+                    </div>
+                    <div class="gallery__item swiper-slide">
+                        <img src="config/img/7.jpg" loading="lazy" class="img__gallery" alt="">
+                    </div>
+                    <div class="gallery__item swiper-slide">
+                        <img src="config/img/8.jpg" loading="lazy" class="img__gallery" alt="">
+                    </div>
+                    <div class="gallery__item swiper-slide">
+                        <img src="config/img/9.jpg" loading="lazy" class="img__gallery" alt="">
+                    </div>
+                    <div class="gallery__item swiper-slide">
+                        <img src="config/img/10.jpg" loading="lazy" class="img__gallery" alt="">
+                    </div>
+                    <div class="gallery__item swiper-slide">
+                        <img src="config/img/11.jpg" loading="lazy" class="img__gallery" alt="">
+                    </div>
+                    <div class="gallery__item swiper-slide">
+                        <img src="config/img/12.jpg" loading="lazy" class="img__gallery" alt="">
+                    </div>
+                    <div class="gallery__item swiper-slide">
+                        <img src="config/img/13.jpg" loading="lazy" class="img__gallery" alt="">
+                    </div>
+                    <div class="gallery__item swiper-slide">
+                        <img src="config/img/14.jpg" loading="lazy" class="img__gallery" alt="">
+                    </div>
+                    <div class="gallery__item swiper-slide">
+                        <img src="config/img/15.jpg" loading="lazy" class="img__gallery" alt="">
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
+                <div class="gallery__modal">
+                    <i class=" close fa-regular fa-circle-xmark"></i>
+                        <i class="fa-solid fa-angle-left left"></i>
+                        <i class="fa-solid fa-angle-right right"></i>
+                        <img src="config/img/images.jpeg" class="img-modal" alt="">
+                        <h2 class="titulomodal titulo">01</h2>
+                </div>
+          </div>
+           </div>
+        </section>
+
+        <section class="service" id="service">
+            <div class="contenedor">
+                <h2 class="titulo">servicios de fotografía</h2>
+            </div>
+        </section>
+        
+        <section class="contact" id="contact">
+            <div class="contenedor">
+                <h2 class="titulo">Contactame y cotiza</h2>
+            </div>
+        </section>
     </main>
+
     <footer>
 
     </footer>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="config/js/modal.js"></script>
+<script src="config/js/slide.js"></script>
 </html>
