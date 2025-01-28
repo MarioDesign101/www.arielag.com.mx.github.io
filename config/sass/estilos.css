@@ -63,7 +63,7 @@ header {
   top: 0;
   left: 0;
   z-index: 8000;
-  background-color: rgb(19, 19, 19);
+  background-color: rgb(0, 0, 0);
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -178,7 +178,7 @@ header .sideMenu .menu .menu__list .menu__list-item a {
   border-radius: 35px 0px 0px 35px;
 }
 header .sideMenu .menu .menu__list .menu__list-item a:hover {
-  background-color: rgb(0, 0, 0);
+  background-color: rgba(255, 255, 255, 0.1333333333);
 }
 header .sideMenu .menu .menu__list .menu__list-item a i {
   font-size: 1.4rem;
@@ -211,7 +211,7 @@ main {
   margin-left: 45px;
 }
 main .banner {
-  background-color: rgb(19, 19, 19);
+  background-color: rgb(0, 0, 0);
   width: 100%;
   height: 100dvh;
   margin: auto;
@@ -250,8 +250,16 @@ main .banner .banner__section-txt {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 80%;
+  width: 83%;
   z-index: 200;
+  border: 4px double rgba(141, 94, 0, 0.5);
+  padding: 10px auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: start;
+  align-items: center;
+  align-content: center;
 }
 main .banner .banner__section-txt .max-titulo {
   font-size: 3rem;
@@ -260,6 +268,7 @@ main .banner .banner__section-txt .max-titulo {
   font-weight: 200;
   text-transform: capitalize;
   font-style: normal;
+  width: 100%;
 }
 main .banner .banner__section-txt .titulo {
   font-size: 2.1rem;
@@ -268,46 +277,7 @@ main .banner .banner__section-txt .titulo {
   font-weight: 200;
   font-style: normal;
   text-transform: capitalize;
-}
-main .banner .banner__line {
-  content: "";
-  position: absolute;
-  height: 150px;
-  width: 2px;
-  background-color: rgb(141, 94, 0);
-  left: 5%;
-  top: 7%;
-  z-index: 200;
-}
-main .banner .banner__line:nth-child(2) {
-  width: 80px;
-  height: 2px;
-  left: 5%;
-  top: 7%;
-}
-main .banner .banner__line:nth-child(3) {
-  width: 80px;
-  height: 2px;
-  left: 7%;
-  top: 8%;
-}
-main .banner .banner__line:nth-child(4) {
-  height: 150px;
-  width: 2px;
-  left: 7%;
-  top: 8%;
-}
-main .banner .banner__line:nth-child(5) {
-  height: 138px;
-  width: 2px;
-  left: 95%;
-  top: 65%;
-}
-main .banner .banner__line:nth-child(6) {
-  width: 50%;
-  height: 2px;
-  left: 45%;
-  top: 92%;
+  width: 100%;
 }
 main .aboutUs {
   padding-left: 0px;
@@ -317,6 +287,7 @@ main .aboutUs {
   height: auto;
 }
 main .aboutUs .titulo {
+  margin-left: 5px;
   margin-bottom: 15px;
   text-transform: uppercase;
   letter-spacing: 3px;
@@ -591,6 +562,7 @@ main .gallery .swiper .gallery__slider .swiper-pagination-bullet {
 }
 main .service {
   width: 100%;
+  margin-top: 25px;
   height: auto;
   margin: auto;
   padding: 9px;
@@ -624,11 +596,132 @@ main .service .titulo::before {
   bottom: 0;
   left: 0;
 }
+main .service .texto {
+  line-height: 22px;
+  margin-bottom: 15px;
+}
+main .service .service__container {
+  width: 100%;
+  margin: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  align-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 22px;
+}
+main .service .service__container .service-item {
+  width: 100%;
+  height: 330px;
+  overflow: hidden;
+  padding: 8px;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 0px 5px 6px;
+  border-radius: 10px;
+  position: relative;
+  interpolate-size: allow-keywords;
+  transition: box-shadow 0.6s;
+  transition: height 0.6s;
+}
+main .service .service__container .service-item:has(input[type=checkbox]:checked) {
+  interpolate-size: allow-keywords;
+  height: auto;
+  box-shadow: none;
+}
+main .service .service__container .service-item:has(input[type=checkbox]:checked) .window-shadow {
+  width: 0;
+  background-image: none;
+  height: 0;
+}
+main .service .service__container .service-item:has(input[type=checkbox]:checked) .arrow {
+  transform: rotate(-30deg);
+}
+main .service .service__container .service-item .window-shadow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom, rgba(51, 51, 51, 0.3333333333), black);
+  z-index: 100;
+  transition: background-image 0.6s;
+  transition: height 0.6s;
+}
+main .service .service__container .service-item .arrow {
+  z-index: 150;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 1.4rem;
+  padding: 4px;
+  cursor: pointer;
+  background-color: rgba(117, 62, 0, 0.5254901961);
+  border-radius: 100%;
+  color: rgba(255, 255, 255, 0.8);
+  transition: transform 0.3s;
+}
+main .service .service__container .service-item input[type=checkbox] {
+  position: absolute;
+  z-index: 150;
+  display: none;
+  width: 100%;
+}
+main .service .service__container .service-item .sub-titulo {
+  color: #753f00;
+  margin-bottom: 15px;
+  text-transform: capitalize;
+  font-weight: bolder;
+  position: relative;
+  font-weight: 600;
+  padding-bottom: 9px;
+}
+main .service .service__container .service-item .sub-titulo::before {
+  content: "";
+  width: 35%;
+  max-width: 180px;
+  border-radius: 3px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  box-shadow: 3px 0px 5px 3px rgba(117, 62, 0, 0.6235294118);
+}
+main .service .service__container .service-item .texto strong {
+  text-shadow: 3px 0px 6px #fff;
+}
+main .service .service__container .service-item ol {
+  margin-left: 15px;
+}
+main .service .service__container .service-item ol li {
+  width: 100%;
+  margin-bottom: 7px;
+  line-height: 22px;
+}
+main .service .service__container .service-item ol li i {
+  font-weight: 700;
+  color: rgb(141, 94, 0);
+}
+main .service .service__container .service-item a {
+  display: inline-block;
+  margin: 10px auto;
+  background-color: #753f00;
+  padding: 10px 6px;
+  border-radius: 5px;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: box-shadow 0.3s;
+}
+main .service .service__container .service-item a:hover {
+  box-shadow: 0px 0px 10px 5px #753f00;
+}
 main .contact {
   width: 100%;
   height: auto;
   margin: auto;
   padding: 9px;
+  margin-top: 20px;
 }
 main .contact .titulo {
   margin-bottom: 15px;
@@ -659,4 +752,522 @@ main .contact .titulo::before {
   background-color: rgba(141, 94, 0, 0.4);
   bottom: 0;
   left: 0;
+}
+main .contact .texto {
+  line-height: 22px;
+  margin-bottom: 15px;
+}
+main .contact form {
+  width: 100%;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.1333333333);
+  padding: 10px;
+}
+main .contact form .form__container {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  align-content: start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+main .contact form .form__container .form__flex-item {
+  width: 100%;
+}
+main .contact form .form__container .form__flex-item label {
+  font-family: sans-serif;
+  text-transform: capitalize;
+  font-weight: 100;
+  letter-spacing: 1px;
+  display: block;
+  margin: 8px auto;
+  color: rgba(255, 255, 255, 0.6);
+}
+main .contact form .form__container .form__flex-item input, main .contact form .form__container .form__flex-item textarea {
+  background-color: transparent;
+  width: 200px;
+  outline: none;
+  border: none;
+  font-family: sans-serif;
+  border-bottom: 1px solid rgb(255, 255, 255);
+  field-sizing: content;
+  resize: none;
+  margin: auto;
+  padding: 8px 0px;
+  margin-bottom: 15px;
+  color: rgb(255, 255, 255);
+  transition: border-bottom 0.5s;
+}
+main .contact form .form__container .form__flex-item input::-moz-placeholder, main .contact form .form__container .form__flex-item textarea::-moz-placeholder {
+  text-transform: uppercase;
+  font-size: 0.7rem;
+}
+main .contact form .form__container .form__flex-item input::placeholder, main .contact form .form__container .form__flex-item textarea::placeholder {
+  text-transform: uppercase;
+  font-size: 0.7rem;
+}
+main .contact form .form__container .form__flex-item input:focus, main .contact form .form__container .form__flex-item input:valid, main .contact form .form__container .form__flex-item textarea:focus, main .contact form .form__container .form__flex-item textarea:valid {
+  border-bottom: 1px solid #753f00;
+  transition: all 0.3s;
+}
+main .contact form .form__container .form__flex-item button {
+  display: block;
+  width: auto;
+  height: auto;
+  margin: auto;
+  border-radius: 9px;
+  font-family: sans-serif;
+  font-size: 1rem;
+  padding: 7px 12px;
+  background-color: #452501;
+  color: rgb(255, 255, 255);
+  border: none;
+  margin-top: 12px;
+  font-weight: bold;
+  transition: all 0.4s;
+}
+main .contact form .form__container .form__flex-item button:hover {
+  background-color: #231300;
+}
+
+footer {
+  margin-top: 25px;
+  margin-left: 45px;
+  height: auto;
+  background-image: linear-gradient(#000, rgba(150, 75, 0, 0.21));
+}
+footer .contenedor {
+  width: 95%;
+  margin: auto;
+  text-align: center;
+}
+footer .contenedor .container__flex {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  gap: 20px;
+  padding: 8px;
+}
+footer .contenedor .container__flex .footer__item {
+  width: 100%;
+}
+footer .contenedor .container__flex .footer__item .mini-titulo {
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  position: relative;
+  padding-bottom: 10px;
+}
+footer .contenedor .container__flex .footer__item .mini-titulo::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  border-radius: 5px;
+  background-color: #753f00;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+footer .contenedor .container__flex .footer__item .mini-titulo::before {
+  content: "";
+  width: 40%;
+  height: 2px;
+  border-radius: 5px;
+  background-color: rgb(141, 94, 0);
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+footer .contenedor .container__flex .footer__item .footer-icon, footer .contenedor .container__flex .footer__item .footer-contact, footer .contenedor .container__flex .footer__item a {
+  display: block;
+  width: 100%;
+  margin-bottom: 5px;
+}
+footer .contenedor .container__flex .footer__item .footer-icon, footer .contenedor .container__flex .footer__item a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  letter-spacing: 1px;
+  transition: color 0.3s;
+}
+footer .contenedor .container__flex .footer__item .footer-icon:hover, footer .contenedor .container__flex .footer__item a:hover {
+  color: rgba(255, 255, 255, 0.6666666667);
+}
+footer .contenedor .container__flex .footer__item .footer-contact {
+  letter-spacing: 2px;
+}
+footer .contenedor .copy {
+  width: 100%;
+  font-family: sans-serif;
+  text-align: center;
+  padding: 10px 5px;
+}
+
+@media screen and (min-width: 360px) {
+  main .service .service__container .service-item .arrow {
+    right: 10px;
+    top: 30px;
+  }
+  main .contact form .form__container {
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+  main .contact form .form__container .form__flex-item label {
+    font-size: 1.1rem;
+  }
+  main .contact form .form__container .form__flex-item input, main .contact form .form__container .form__flex-item textarea {
+    display: block;
+    background-color: transparent;
+    width: 75dvw;
+    outline: none;
+    border: none;
+    font-family: sans-serif;
+    border-bottom: 1px solid rgb(255, 255, 255);
+    field-sizing: content;
+    resize: none;
+    padding: 8px 0px;
+    margin-bottom: 15px;
+    color: rgb(255, 255, 255);
+    transition: border-bottom 0.5s;
+  }
+  main .contact form .form__container .form__flex-item input::-moz-placeholder, main .contact form .form__container .form__flex-item textarea::-moz-placeholder {
+    text-transform: uppercase;
+    font-size: 0.7rem;
+  }
+  main .contact form .form__container .form__flex-item input::placeholder, main .contact form .form__container .form__flex-item textarea::placeholder {
+    text-transform: uppercase;
+    font-size: 0.7rem;
+  }
+  main .contact form .form__container .form__flex-item input:focus, main .contact form .form__container .form__flex-item input:valid, main .contact form .form__container .form__flex-item textarea:focus, main .contact form .form__container .form__flex-item textarea:valid {
+    border-bottom: 1px solid #753f00;
+    transition: all 0.3s;
+  }
+  main .contact form .form__container .form__flex-item button {
+    display: block;
+    width: auto;
+    height: auto;
+    margin: auto;
+    border-radius: 9px;
+    font-family: sans-serif;
+    font-size: 1rem;
+    padding: 7px 12px;
+    background-color: #452501;
+    color: rgb(255, 255, 255);
+    border: none;
+    margin-top: 12px;
+    font-weight: bold;
+    transition: all 0.4s;
+  }
+  main .contact form .form__container .form__flex-item button:hover {
+    background-color: #231300;
+  }
+}
+@media screen and (min-width: 480px) {
+  main .banner {
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    height: 100dvh;
+    margin: auto;
+    position: relative;
+  }
+  main .banner .banner__section-img img {
+    -o-object-position: left;
+       object-position: left;
+  }
+  main .banner .banner__section-txt {
+    padding: 10px;
+  }
+  main .banner .banner__section-txt .max-titulo {
+    font-size: 5rem;
+    margin-bottom: 10px;
+    font-family: "Pt Serif", serif;
+    font-weight: 200;
+    text-transform: capitalize;
+    font-style: normal;
+    width: 100%;
+  }
+  main .banner .banner__section-txt .titulo {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    font-family: "Pt Serif", serif;
+    font-weight: 200;
+    font-style: normal;
+    text-transform: capitalize;
+    width: 100%;
+  }
+  main .aboutUs .titulo {
+    font-size: 2.3rem;
+  }
+  main .aboutUs .aboutUs__info .aboutUs__img {
+    border: 5px solid rgba(117, 62, 0, 0.631372549);
+    position: relative;
+  }
+  main .aboutUs .aboutUs__info .aboutUs__img img {
+    height: 300px;
+  }
+  main .aboutUs .aboutUs__info .aboutUs__txt {
+    position: relative;
+  }
+  main .aboutUs .aboutUs__info .aboutUs__txt .sub-titulo {
+    font-size: 1.7rem;
+  }
+  main .aboutUs .aboutUs__info .aboutUs__txt .texto {
+    font-size: 1.2rem;
+    line-height: 25px;
+  }
+  main .aboutUs .aboutUs__info .aboutUs__txt a {
+    font-size: 1.2rem;
+    line-height: 25px;
+  }
+  main .gallery .titulo {
+    font-size: 2.3rem;
+  }
+  main .gallery .texto {
+    line-height: 25px;
+    font-size: 1.2rem;
+  }
+  main .service .titulo {
+    font-size: 2.3rem;
+  }
+  main .service .texto {
+    line-height: 25px;
+    font-size: 1.2rem;
+  }
+  main .service .service__container .service-item .sub-titulo {
+    font-size: 1.7rem;
+  }
+  main .service .service__container .service-item .texto {
+    font-size: 1.2rem;
+    line-height: 25px;
+  }
+  main .service .service__container .service-item ol li {
+    font-size: 1.2rem;
+    line-height: 25px;
+  }
+  main .service .service__container .service-item a {
+    font-size: 1.2rem;
+    line-height: 25px;
+  }
+  main .contact .titulo {
+    font-size: 2.3rem;
+  }
+  main .contact .texto {
+    font-size: 1.2rem;
+    line-height: 25px;
+  }
+  main .contact form .form__container .form__flex-item label {
+    font-size: 1.2rem;
+  }
+  main .contact form .form__container .form__flex-item input, main .contact form .form__container .form__flex-item textarea {
+    font-size: 1.2rem;
+  }
+  main .contact form .form__container .form__flex-item button {
+    font-size: 1.2rem;
+  }
+  footer .contenedor .container__flex .footer__item .mini-titulo {
+    font-size: 1.2rem;
+  }
+  footer .contenedor .container__flex .footer__item .footer-icon, footer .contenedor .container__flex .footer__item .footer-contact, footer .contenedor .container__flex .footer__item a {
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+  }
+  footer .contenedor .copy {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  main .banner .banner__section-img img {
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  main .banner .banner__section-txt {
+    padding: 10px;
+  }
+  main .banner .banner__section-txt .max-titulo {
+    font-size: 8rem;
+  }
+  main .banner .banner__section-txt .titulo {
+    font-size: 3.2rem;
+  }
+  main .aboutUs .titulo {
+    font-size: 2.6rem;
+  }
+  main .aboutUs .aboutUs__info {
+    align-content: center;
+  }
+  main .aboutUs .aboutUs__info:nth-child(2) .aboutUs__img {
+    order: 2;
+  }
+  main .aboutUs .aboutUs__info .aboutUs__img {
+    width: 45%;
+    height: 80dvh;
+  }
+  main .aboutUs .aboutUs__info .aboutUs__img img {
+    display: block;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+  }
+  main .aboutUs .aboutUs__info .aboutUs__txt {
+    width: 50%;
+    position: relative;
+  }
+  main .aboutUs .aboutUs__info .aboutUs__txt .sub-titulo {
+    font-size: 2rem;
+  }
+  main .aboutUs .aboutUs__info .aboutUs__txt .texto {
+    font-size: 1.5rem;
+    line-height: 30px;
+  }
+  main .aboutUs .aboutUs__info .aboutUs__txt a {
+    font-size: 1.5rem;
+    line-height: 30px;
+  }
+  main .gallery .titulo {
+    font-size: 2.6rem;
+  }
+  main .gallery .texto {
+    padding: 8px;
+    font-size: 1.5rem;
+    line-height: 30px;
+  }
+  main .service .titulo {
+    font-size: 2.6rem;
+  }
+  main .service .texto {
+    font-size: 1.5rem;
+    line-height: 30px;
+    margin-bottom: 25px;
+  }
+  main .service .service__container {
+    gap: 30px;
+  }
+  main .service .service__container .service-item {
+    width: 45%;
+  }
+  main .service .service__container .service-item .sub-titulo {
+    font-size: 2rem;
+  }
+  main .service .service__container .service-item .texto {
+    font-size: 1.5rem;
+    line-height: 30px;
+  }
+  main .service .service__container .service-item ol li {
+    font-size: 1.5rem;
+    line-height: 30px;
+  }
+  main .service .service__container .service-item a {
+    font-size: 1.5rem;
+    line-height: 30px;
+  }
+  main .contact .titulo {
+    font-size: 2.6rem;
+  }
+  main .contact .texto {
+    font-size: 1.5rem;
+    line-height: 30px;
+  }
+  main .contact form {
+    margin: 20px auto;
+  }
+  main .contact form .form__container .form__flex-item label {
+    font-size: 1.2rem;
+  }
+  main .contact form .form__container .form__flex-item input, main .contact form .form__container .form__flex-item textarea {
+    font-size: 1.2rem;
+  }
+  main .contact form .form__container .form__flex-item button {
+    font-size: 1.2rem;
+  }
+  footer .contenedor .container__flex {
+    align-items: start;
+  }
+  footer .contenedor .container__flex .footer__item {
+    width: 31%;
+  }
+  footer .contenedor .container__flex .footer__item .mini-titulo {
+    font-size: 1.3rem;
+  }
+  footer .contenedor .container__flex .footer__item .mini-titulo::after {
+    content: "";
+    display: none;
+  }
+  footer .contenedor .container__flex .footer__item .mini-titulo::before {
+    content: "";
+    display: none;
+  }
+  footer .contenedor .container__flex .footer__item .footer-icon, footer .contenedor .container__flex .footer__item .footer-contact, footer .contenedor .container__flex .footer__item a {
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+  }
+  footer .contenedor .copy {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  main .service .service__container {
+    gap: 40px;
+  }
+  main .service .service__container .service-item .sub-titulo {
+    font-size: 2rem;
+  }
+  main .service .service__container .service-item .texto {
+    font-size: 1.5rem;
+    line-height: 30px;
+  }
+  main .service .service__container .service-item ol li {
+    font-size: 1.5rem;
+    line-height: 30px;
+  }
+  main .service .service__container .service-item a {
+    font-size: 1.5rem;
+    line-height: 30px;
+  }
+  main .contact .titulo {
+    font-size: 2.6rem;
+  }
+  main .contact .texto {
+    font-size: 1.5rem;
+    line-height: 30px;
+  }
+  main .contact form {
+    height: 69dvh;
+    margin: 20px auto;
+  }
+  main .contact form .form__container {
+    height: 100%;
+  }
+  main .contact form .form__container .form__flex-item {
+    width: 40%;
+    padding: 0px 10px;
+    height: 100%;
+  }
+  main .contact form .form__container .form__flex-item label {
+    font-size: 1.2rem;
+  }
+  main .contact form .form__container .form__flex-item input, main .contact form .form__container .form__flex-item textarea {
+    width: 100%;
+    font-size: 1.2rem;
+  }
+  main .contact form .form__container .form__flex-item textarea {
+    height: 56%;
+  }
+  main .contact form .form__container .form__flex-item button {
+    width: 50%;
+    font-size: 1.2rem;
+  }
 }/*# sourceMappingURL=estilos.css.map */
