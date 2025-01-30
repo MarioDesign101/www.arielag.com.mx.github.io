@@ -289,28 +289,49 @@
             <div class="contenedor">
                 <h2 class="titulo">Contactame</h2>
                 <p class="texto"> Esta es una sección donde los visitantes pueden proporcionar sus datos o hacer solicitudes relacionadas con los servicios fotográficos ofrecidos. Este formulario está diseñado para facilitar la comunicación entre su servidor y usted, permitiéndoles consultar precios, hacer reservas o pedir información adicional.</p>
-                <form action="" enctype="multipart/form-data" method="post">
+                <form action="" id="form" enctype="multipart/form-data" method="post">
                         <div class="form__container">
                             <div class="form__flex-item">
                                 <label for="nombre">Nombre</label>
-                                <input type="text" placeholder="John" name="nombre" id="nombre" tabindex="1" aria-label="Escribe tu nombre. Ejemplo John Damian" aria-required="Es necesario llenar este campo" required autocomplete="additional-name">
+                                <input type="text" placeholder="John" name="nombre" id="nombre" tabindex="1" aria-label="Escribe tu nombre. Ejemplo John Damian" autocomplete="additional-name">
                                
-                                <label for="apellido">Apellido</label>
-                                <input type="text" placeholder="Doe" name="apellido" id="apellido" tabindex="2" aria-label="Escribe tu nombre. Ejemplo Doe Henderson" aria-required="Es necesario llenar este campo" required autocomplete="additional-name">
+                                <label for="telefono">Número telefónico (añade código de país)</label>
+                                <input type="tel" placeholder="55-555-555" min="10" max="10" name="telefono" id="telefono" tabindex="2" aria-label="Escribe tu número de contacto"  autocomplete="additional-name">
             
                                 <label for="mail">Correo electrónico</label>
-                                <input type="email" placeholder="exemple@dominio.com" name="mail" id="mail" tabindex="3" aria-label="Escribe tu correo electrónico. Ejemplo micorreo@dominio.com" aria-required="Es necesario llenar este campo" required autocomplete="additional-name">
+                                <input type="email" placeholder="exemple@dominio.com" name="mail" id="mail" tabindex="3" aria-label="Escribe tu correo electrónico. Ejemplo micorreo@dominio.com"  autocomplete="additional-name">
+                                
                                 <label for="asunto">Asunto</label>
-                                <input type="text" placeholder="Texto corto sobre el asunto" name="asunto" id="asunto" tabindex="4" aria-label="Escribe el motivo del contacto" aria-required="Es necesario llenar este campo" required autocomplete="additional-name">
+                               <select name="asunto" id="asunto" aria-placeholder="Elige un asunto" aria-label="Escribe el motivo del contacto"  tabindex="4" autocomplete="additional-name">
+                                <option value="" class="first-option">-- Elige un asunto --</option>
+                                <option value="consulta" selected>Consulta</option>
+                                <option value="soporte">Cotización</option>
+                                <option value="comentarios">Servicio de fotografía
+                                    <optgroup label="Elige un servicio">
+                                        <option value="servicio__sesion-fotografica">Sesion fotográfica</option>
+                                        <option value="servicio__cobertura-empresarial">Cobertura empresarial</option>
+                                        <option value="servicio__eventos-sociales">Cobertura de eventos sociales</option>
+                                        <option value="servicio__prodcut-Shot">Product shot</option>
+                                    </optgroup>
+                                </option>
+                               </select>
                             </div>
                             <div class="form__flex-item">
                                 <label for="mensaje">Mensaje</label>
-                                <textarea type="text" placeholder="Escribe una nota para mi" name="mensaje" id="mensaje" tabindex="5" required aria-label="Escribe tu mensaje. Ejemplo Me comunico con el motivo de..." aria-required="Es necesario llenar este campo" required autocomplete="additional-name"></textarea>
+                                <textarea type="text" placeholder="Escribe una nota para mi" name="mensaje" id="mensaje" tabindex="5" aria-label="Escribe tu mensaje. Ejemplo Me comunico con el motivo de..." autocomplete="additional-name"></textarea>
             
-                                <button type="submit"><span>Enviar</span></button>
+                                <button type="submit">Enviar</button>
+                                <!-- <div class="warning" id="warning">
+                                        <div class="modal">
+                                            <div class="modal__ex"><i class="fa-solid fa-xmark"></i></div>
+                                            <i class="fa-solid fa-circle-exclamation"></i>
+                                    <span>Este será un mensaje de alerta</span>
+                                    </div>
+                                </div> -->
                             </div>
                         </div>
                 </form>
+                <a href="mailto:marbertoalmar2000@gmail.com" id="enviarForm"></a>
             </div>
         </section>
     </main>
@@ -343,6 +364,17 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="config/js/modal.js"></script>
 <script src="config/js/slide.js"></script>
+<script src="config/js/validacion.js"></script>
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "1G8bk--eFvkeuv8Hf",
+      });
+   })();
+</script>
 <script>
 
 </script>

@@ -760,7 +760,7 @@ main .contact .texto {
 main .contact form {
   width: 100%;
   margin: auto;
-  background-color: rgba(255, 255, 255, 0.1333333333);
+  box-shadow: 0px 0px 22px 7px rgba(255, 255, 255, 0.1333333333);
   padding: 10px;
 }
 main .contact form .form__container {
@@ -785,7 +785,7 @@ main .contact form .form__container .form__flex-item label {
   margin: 8px auto;
   color: rgba(255, 255, 255, 0.6);
 }
-main .contact form .form__container .form__flex-item input, main .contact form .form__container .form__flex-item textarea {
+main .contact form .form__container .form__flex-item input, main .contact form .form__container .form__flex-item textarea, main .contact form .form__container .form__flex-item select {
   background-color: transparent;
   width: 200px;
   outline: none;
@@ -800,17 +800,43 @@ main .contact form .form__container .form__flex-item input, main .contact form .
   color: rgb(255, 255, 255);
   transition: border-bottom 0.5s;
 }
-main .contact form .form__container .form__flex-item input::-moz-placeholder, main .contact form .form__container .form__flex-item textarea::-moz-placeholder {
+main .contact form .form__container .form__flex-item input::-moz-placeholder, main .contact form .form__container .form__flex-item textarea::-moz-placeholder, main .contact form .form__container .form__flex-item select::-moz-placeholder {
   text-transform: uppercase;
   font-size: 0.7rem;
 }
-main .contact form .form__container .form__flex-item input::placeholder, main .contact form .form__container .form__flex-item textarea::placeholder {
+main .contact form .form__container .form__flex-item input::placeholder, main .contact form .form__container .form__flex-item textarea::placeholder, main .contact form .form__container .form__flex-item select::placeholder {
   text-transform: uppercase;
   font-size: 0.7rem;
 }
-main .contact form .form__container .form__flex-item input:focus, main .contact form .form__container .form__flex-item input:valid, main .contact form .form__container .form__flex-item textarea:focus, main .contact form .form__container .form__flex-item textarea:valid {
+main .contact form .form__container .form__flex-item input:focus, main .contact form .form__container .form__flex-item input:valid, main .contact form .form__container .form__flex-item textarea:focus, main .contact form .form__container .form__flex-item textarea:valid, main .contact form .form__container .form__flex-item select:focus, main .contact form .form__container .form__flex-item select:valid {
   border-bottom: 1px solid #753f00;
   transition: all 0.3s;
+}
+main .contact form .form__container .form__flex-item input option, main .contact form .form__container .form__flex-item input optgroup, main .contact form .form__container .form__flex-item textarea option, main .contact form .form__container .form__flex-item textarea optgroup, main .contact form .form__container .form__flex-item select option, main .contact form .form__container .form__flex-item select optgroup {
+  background-color: rgb(0, 0, 0);
+  width: 200px;
+  outline: none;
+  border: none;
+  font-family: sans-serif;
+  border-bottom: 1px solid rgb(255, 255, 255);
+  field-sizing: content;
+  resize: none;
+  margin: auto;
+  padding: 8px 0px;
+  margin-bottom: 15px;
+  color: rgb(255, 255, 255);
+  border: none;
+  outline: none;
+  transition: background-color 0.5s;
+}
+main .contact form .form__container .form__flex-item input option:hover, main .contact form .form__container .form__flex-item input optgroup:hover, main .contact form .form__container .form__flex-item textarea option:hover, main .contact form .form__container .form__flex-item textarea optgroup:hover, main .contact form .form__container .form__flex-item select option:hover, main .contact form .form__container .form__flex-item select optgroup:hover {
+  background-color: rgb(141, 94, 0);
+}
+main .contact form .form__container .form__flex-item input optgroup, main .contact form .form__container .form__flex-item textarea optgroup, main .contact form .form__container .form__flex-item select optgroup {
+  background-color: rgba(69, 37, 1, 0.9137254902);
+}
+main .contact form .form__container .form__flex-item input .first-option, main .contact form .form__container .form__flex-item textarea .first-option, main .contact form .form__container .form__flex-item select .first-option {
+  color: rgba(255, 255, 255, 0.2);
 }
 main .contact form .form__container .form__flex-item button {
   display: block;
@@ -830,6 +856,58 @@ main .contact form .form__container .form__flex-item button {
 }
 main .contact form .form__container .form__flex-item button:hover {
   background-color: #231300;
+}
+main .contact form .form__container .form__flex-item #warning {
+  position: fixed;
+  z-index: 500000000;
+  height: 100dvh;
+  width: 100dvw;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+main .contact form .form__container .form__flex-item #warning .modal {
+  width: 40%;
+  max-width: 500px;
+  height: auto;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.2666666667);
+}
+main .contact form .form__container .form__flex-item #warning .modal .modal__ex {
+  width: 100%;
+  height: 30px;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: relative;
+  padding: 20px 0px;
+}
+main .contact form .form__container .form__flex-item #warning .modal .modal__ex i {
+  bottom: 1px;
+  position: absolute;
+  right: 10px;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  padding: 2px;
+  border-radius: 3px;
+}
+main .contact form .form__container .form__flex-item #warning .modal i {
+  display: block;
+  padding: 5px;
+  font-size: 1.7rem;
+  color: rgb(255, 255, 255);
+}
+main .contact form .form__container .form__flex-item #warning .modal span {
+  display: block;
+  padding: 10px auto;
+  padding-bottom: 20px;
+  font-size: 1.4rem;
+  font-family: sans-serif;
+  color: rgb(255, 255, 255);
 }
 
 footer {
@@ -925,7 +1003,7 @@ footer .contenedor .copy {
   main .contact form .form__container .form__flex-item label {
     font-size: 1.1rem;
   }
-  main .contact form .form__container .form__flex-item input, main .contact form .form__container .form__flex-item textarea {
+  main .contact form .form__container .form__flex-item input, main .contact form .form__container .form__flex-item textarea, main .contact form .form__container .form__flex-item select {
     display: block;
     background-color: transparent;
     width: 75dvw;
@@ -940,15 +1018,15 @@ footer .contenedor .copy {
     color: rgb(255, 255, 255);
     transition: border-bottom 0.5s;
   }
-  main .contact form .form__container .form__flex-item input::-moz-placeholder, main .contact form .form__container .form__flex-item textarea::-moz-placeholder {
+  main .contact form .form__container .form__flex-item input::-moz-placeholder, main .contact form .form__container .form__flex-item textarea::-moz-placeholder, main .contact form .form__container .form__flex-item select::-moz-placeholder {
     text-transform: uppercase;
     font-size: 0.7rem;
   }
-  main .contact form .form__container .form__flex-item input::placeholder, main .contact form .form__container .form__flex-item textarea::placeholder {
+  main .contact form .form__container .form__flex-item input::placeholder, main .contact form .form__container .form__flex-item textarea::placeholder, main .contact form .form__container .form__flex-item select::placeholder {
     text-transform: uppercase;
     font-size: 0.7rem;
   }
-  main .contact form .form__container .form__flex-item input:focus, main .contact form .form__container .form__flex-item input:valid, main .contact form .form__container .form__flex-item textarea:focus, main .contact form .form__container .form__flex-item textarea:valid {
+  main .contact form .form__container .form__flex-item input:focus, main .contact form .form__container .form__flex-item input:valid, main .contact form .form__container .form__flex-item textarea:focus, main .contact form .form__container .form__flex-item textarea:valid, main .contact form .form__container .form__flex-item select:focus, main .contact form .form__container .form__flex-item select:valid {
     border-bottom: 1px solid #753f00;
     transition: all 0.3s;
   }
@@ -1068,7 +1146,7 @@ footer .contenedor .copy {
   main .contact form .form__container .form__flex-item label {
     font-size: 1.2rem;
   }
-  main .contact form .form__container .form__flex-item input, main .contact form .form__container .form__flex-item textarea {
+  main .contact form .form__container .form__flex-item input, main .contact form .form__container .form__flex-item textarea, main .contact form .form__container .form__flex-item select {
     font-size: 1.2rem;
   }
   main .contact form .form__container .form__flex-item button {
@@ -1101,9 +1179,6 @@ footer .contenedor .copy {
   main .banner .banner__section-txt .titulo {
     font-size: 3.2rem;
   }
-  main .aboutUs .titulo {
-    font-size: 2.6rem;
-  }
   main .aboutUs .aboutUs__info {
     align-content: center;
   }
@@ -1124,31 +1199,10 @@ footer .contenedor .copy {
     width: 50%;
     position: relative;
   }
-  main .aboutUs .aboutUs__info .aboutUs__txt .sub-titulo {
-    font-size: 2rem;
-  }
-  main .aboutUs .aboutUs__info .aboutUs__txt .texto {
-    font-size: 1.5rem;
-    line-height: 30px;
-  }
-  main .aboutUs .aboutUs__info .aboutUs__txt a {
-    font-size: 1.5rem;
-    line-height: 30px;
-  }
-  main .gallery .titulo {
-    font-size: 2.6rem;
-  }
   main .gallery .texto {
     padding: 8px;
-    font-size: 1.5rem;
-    line-height: 30px;
-  }
-  main .service .titulo {
-    font-size: 2.6rem;
   }
   main .service .texto {
-    font-size: 1.5rem;
-    line-height: 30px;
     margin-bottom: 25px;
   }
   main .service .service__container {
@@ -1157,48 +1211,14 @@ footer .contenedor .copy {
   main .service .service__container .service-item {
     width: 45%;
   }
-  main .service .service__container .service-item .sub-titulo {
-    font-size: 2rem;
-  }
-  main .service .service__container .service-item .texto {
-    font-size: 1.5rem;
-    line-height: 30px;
-  }
-  main .service .service__container .service-item ol li {
-    font-size: 1.5rem;
-    line-height: 30px;
-  }
-  main .service .service__container .service-item a {
-    font-size: 1.5rem;
-    line-height: 30px;
-  }
-  main .contact .titulo {
-    font-size: 2.6rem;
-  }
-  main .contact .texto {
-    font-size: 1.5rem;
-    line-height: 30px;
-  }
   main .contact form {
     margin: 20px auto;
-  }
-  main .contact form .form__container .form__flex-item label {
-    font-size: 1.2rem;
-  }
-  main .contact form .form__container .form__flex-item input, main .contact form .form__container .form__flex-item textarea {
-    font-size: 1.2rem;
-  }
-  main .contact form .form__container .form__flex-item button {
-    font-size: 1.2rem;
   }
   footer .contenedor .container__flex {
     align-items: start;
   }
   footer .contenedor .container__flex .footer__item {
     width: 31%;
-  }
-  footer .contenedor .container__flex .footer__item .mini-titulo {
-    font-size: 1.3rem;
   }
   footer .contenedor .container__flex .footer__item .mini-titulo::after {
     content: "";
@@ -1212,7 +1232,6 @@ footer .contenedor .copy {
     display: block;
     width: 100%;
     margin-bottom: 5px;
-    font-size: 1.2rem;
   }
   footer .contenedor .copy {
     font-size: 1.2rem;
@@ -1222,52 +1241,20 @@ footer .contenedor .copy {
   main .service .service__container {
     gap: 40px;
   }
-  main .service .service__container .service-item .sub-titulo {
-    font-size: 2rem;
-  }
-  main .service .service__container .service-item .texto {
-    font-size: 1.5rem;
-    line-height: 30px;
-  }
-  main .service .service__container .service-item ol li {
-    font-size: 1.5rem;
-    line-height: 30px;
-  }
-  main .service .service__container .service-item a {
-    font-size: 1.5rem;
-    line-height: 30px;
-  }
-  main .contact .titulo {
-    font-size: 2.6rem;
-  }
-  main .contact .texto {
-    font-size: 1.5rem;
-    line-height: 30px;
-  }
   main .contact form {
-    height: 69dvh;
     margin: 20px auto;
   }
   main .contact form .form__container {
     height: 100%;
+    align-items: stretch;
   }
   main .contact form .form__container .form__flex-item {
     width: 40%;
     padding: 0px 10px;
     height: 100%;
   }
-  main .contact form .form__container .form__flex-item label {
-    font-size: 1.2rem;
-  }
-  main .contact form .form__container .form__flex-item input, main .contact form .form__container .form__flex-item textarea {
+  main .contact form .form__container .form__flex-item input, main .contact form .form__container .form__flex-item textarea, main .contact form .form__container .form__flex-item select {
     width: 100%;
-    font-size: 1.2rem;
-  }
-  main .contact form .form__container .form__flex-item textarea {
-    height: 56%;
-  }
-  main .contact form .form__container .form__flex-item button {
-    width: 50%;
     font-size: 1.2rem;
   }
 }/*# sourceMappingURL=estilos.css.map */

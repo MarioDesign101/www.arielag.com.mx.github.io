@@ -774,7 +774,7 @@ main {
         form {
             width: 100%;
             margin: auto;
-            background-color: #fff2;
+          box-shadow: 0px 0px 22px 7px #fff2;
             padding: 10px;
                 .form__container {
                     width: 100%;
@@ -796,7 +796,7 @@ main {
                             margin: 8px auto;
                             color: #fff9;
                         }
-                        input, textarea {
+                        input, textarea, select {
                             background-color: transparent;
                             width: 200px;
                             outline: none;
@@ -818,7 +818,34 @@ main {
                                 border-bottom: 1px solid $color__dorado2;
                                 transition: all .3s;
                               }
+                              option, optgroup {
+                                background-color: $color__negro;
+                                width: 200px;
+                                outline: none;
+                                border: none;
+                                font-family: sans-serif;
+                                border-bottom: 1px solid $color__blanco;
+                                field-sizing: content;
+                                resize: none;
+                                margin: auto;
+                                padding: 8px 0px;
+                                margin-bottom: 15px;
+                                color: $color__blanco;
+                                border: none;
+                                outline: none;
+                                transition: background-color .5s;
+                               &:hover {
+                                background-color: $color__dorado;
+                               }
+                              }
+                              optgroup {
+                                background-color: #452501e9;
+                              }
+                              .first-option {
+                                color: #fff3;
+                              }
                         }
+
                         button {
                             display: block;
                             width: auto;
@@ -836,6 +863,59 @@ main {
                             transition: all .4s;
                             &:hover {
                                 background-color: #231300;
+                            }
+                        }
+                        #warning {
+                            position: fixed;
+                            z-index: 500000000;
+                            height: 100dvh;
+                            width: 100dvw;
+                            top: 0;
+                            left: 0;
+                            background-color: #0003;
+                            backdrop-filter: blur(20px);
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: center;
+                            align-items: center;
+                            .modal {
+                                width: 40%;
+                                max-width: 500px;
+                                height: auto;
+                                text-align: center;
+                                background-color: #fff4;
+                                .modal__ex {
+                                    width: 100%;
+                                    height: 30px;
+                                    background-color: #0003;
+                                    position: relative;
+                                    padding: 20px 0px;
+                                    i {
+                                        bottom: 1px;
+                                        position: absolute;
+                                        right: 10px;
+                                        color: $color__blanco;
+                                        cursor: pointer;
+                                        padding: 2px;
+                                        border-radius: 3px;
+                                      
+                                    }
+                                }
+
+                                i {
+                                    display: block;
+                                    padding: 5px;
+                                    font-size: 1.7rem;
+                                    color: $color__blanco;
+                                }
+                                span {
+                                    display: block;
+                                    padding: 10px auto;
+                                    padding-bottom: 20px;
+                                    font-size: 1.4rem;
+                                    font-family: sans-serif;
+                                    color: $color__blanco;
+                                }
                             }
                         }
                     }
@@ -949,7 +1029,7 @@ main {
                         label {
                             font-size: 1.1rem;
                         }
-                        input, textarea {
+                        input, textarea, select {
                             display: block;
                             background-color: transparent;
                             width: 75dvw;
@@ -1120,7 +1200,7 @@ main {
                         label {
                             font-size: 1.2rem;
                         }
-                        input, textarea {
+                        input, textarea, select {
                            font-size: 1.2rem;
                         }
                         button {
@@ -1180,7 +1260,7 @@ main {
     }
     .aboutUs {
         .titulo {
-            font-size: 2.6rem;
+            // font-size: 2.6rem;
         }
         .aboutUs__info {
             align-content: center;
@@ -1203,36 +1283,36 @@ main {
                 width: 50%;
                 position: relative;
                 .sub-titulo {
-                    font-size: 2rem;
+                    // font-size: 2rem;
                 }
                 .texto {
-                    font-size: 1.5rem;
-                    line-height: 30px;
+                    // font-size: 1.5rem;
+                    // line-height: 30px;
                 }
                 a {
-                    font-size: 1.5rem;
-                    line-height: 30px;
+                    // font-size: 1.5rem;
+                    // line-height: 30px;
                 }
             }
         }
     }
     .gallery {
         .titulo {
-            font-size: 2.6rem;
+            // font-size: 2.6rem;
         }
         .texto {
             padding: 8px;
-            font-size: 1.5rem;
-                    line-height: 30px;
+            // font-size: 1.5rem;
+            //         line-height: 30px;
         }
     }
     .service {
         .titulo {
-            font-size: 2.6rem;
+            // font-size: 2.6rem;
         }
         .texto {
-            font-size: 1.5rem;
-            line-height: 30px;
+            // font-size: 1.5rem;
+            // line-height: 30px;
             margin-bottom: 25px;
         }
         .service__container {
@@ -1243,46 +1323,46 @@ main {
                 //     transform: rotate(180deg);
                 // }
                 .sub-titulo {
-           font-size: 2rem;
+        //    font-size: 2rem;
                 }
                 .texto {
-                    font-size: 1.5rem;
-                    line-height: 30px;
+                    // font-size: 1.5rem;
+                    // line-height: 30px;
                 }
                 ol {
                     li {
-                        font-size: 1.5rem;
-                        line-height: 30px;
+                        // font-size: 1.5rem;
+                        // line-height: 30px;
                     }
                 }
                 a {
-                    font-size: 1.5rem;
-                    line-height: 30px;
+                    // font-size: 1.5rem;
+                    // line-height: 30px;
                 }
             }
         }
     }
     .contact {
         .titulo {
-            font-size: 2.6rem;
+            // font-size: 2.6rem;
         }
         .texto {
-            font-size: 1.5rem;
-            line-height: 30px;
+            // font-size: 1.5rem;
+            // line-height: 30px;
         }
         form {
             margin: 20px auto;
                 .form__container {
                     .form__flex-item {
-                        label {
-                            font-size: 1.2rem;
-                        }
-                        input, textarea {
-                           font-size: 1.2rem;
-                        }
-                        button {
-                            font-size: 1.2rem;
-                        }
+                        // label {
+                        //     font-size: 1.2rem;
+                        // }
+                        // input, textarea {
+                        //    font-size: 1.2rem;
+                        // }
+                        // button {
+                        //     font-size: 1.2rem;
+                        // }
                     }
                 }
             
@@ -1296,7 +1376,7 @@ main {
             .footer__item {
                 width: 31%;
                 .mini-titulo {
-                    font-size: 1.3rem;
+                    // font-size: 1.3rem;
                     &::after {
                         content: '';
                         display: none;
@@ -1310,7 +1390,7 @@ main {
                     display: block;
                     width: 100%;
                     margin-bottom: 5px;
-                    font-size: 1.2rem;
+                    // font-size: 1.2rem;
                 }
             }
         }
@@ -1333,57 +1413,58 @@ main {
                     //     transform: rotate(180deg);
                     // }
                     .sub-titulo {
-               font-size: 2rem;
+            //    font-size: 2rem;
                     }
                     .texto {
-                        font-size: 1.5rem;
-                        line-height: 30px;
+                        // font-size: 1.5rem;
+                        // line-height: 30px;
                     }
                     ol {
                         li {
-                            font-size: 1.5rem;
-                            line-height: 30px;
+                            // font-size: 1.5rem;
+                            // line-height: 30px;
                         }
                     }
                     a {
-                        font-size: 1.5rem;
-                        line-height: 30px;
+                        // font-size: 1.5rem;
+                        // line-height: 30px;
                     }
                 }
             }
         }
         .contact {
-            .titulo {
-                font-size: 2.6rem;
-            }
-            .texto {
-                font-size: 1.5rem;
-                line-height: 30px;
-            }
+            // .titulo {
+            //     font-size: 2.6rem;
+            // }
+            // .texto {
+            //     font-size: 1.5rem;
+            //     line-height: 30px;
+            // }
             form {
-                height: 69dvh;
+
                 margin: 20px auto;
                    
                     .form__container {
                         height: 100%;
+                        align-items: stretch;
                         .form__flex-item {
                             width: 40%;
                             padding: 0px 10px;
                             height: 100%;
-                            label {
-                                font-size: 1.2rem;
-                            }
-                            input, textarea {
+                            // label {
+                            //     font-size: 1.2rem;
+                            // }
+                            input, textarea, select {
                                 width: 100%;
                                font-size: 1.2rem;
                             }
-                            textarea {
-                                height: 56%;
-                            }
-                            button {
-                                width: 50%;
-                                font-size: 1.2rem;
-                            }
+                            // textarea {
+                            //     height: 56%;
+                            // }
+                            // button {
+                            //     width: 50%;
+                            //     font-size: 1.2rem;
+                            // }
                         }
                     }
                 
